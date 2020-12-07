@@ -12,7 +12,7 @@ html {
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   height: 8vh;
   background-color: transparent;
   position: fixed;
@@ -23,15 +23,17 @@ header {
 
 header .navbar {
   background-color: transparent;
-  width: 83vw;
+  width: 83%;
   height: 100%;
-  color: white;
   padding: 2px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .humberger {
-  width: 7vh;
+  width: 50px;
   height: 7vh;
   padding-top: 13px;
   cursor: pointer;
@@ -675,10 +677,6 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-  header .navbar{
-    background-color: transparent;
-    width: 70%;
-  }
   .catcher .move .content .base .identity {
     padding-left: 20px;
     padding-right: 50px;
