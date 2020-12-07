@@ -1,0 +1,620 @@
+$lightblack: rgb(14, 13, 13);
+$whitesmoke: whitesmoke;
+$orangered: #c45d22;
+$orangehover: rgb(122, 53, 12);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: none;
+}
+header {
+  width: 100%;
+  height: 8vh;
+  background-color: transparent;
+  position: fixed;
+  z-index: 999;
+  backdrop-filter: blur(15px);
+  .navbar {
+    background-color: transparent;
+    width: 83vw;
+    height: 100%;
+    color: white;
+    padding: 2px;
+    margin: auto;
+  }
+
+  .humberger {
+    width: 7vh;
+    height: 7vh;
+    padding-top: 13px;
+    cursor: pointer;
+
+    &:hover .line:nth-child(1) {
+      transform: translateX(14px);
+      transition: transform 0.4s ease-in-out;
+    }
+    &:hover .line:nth-child(3) {
+      transform: translateX(-14px);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .line {
+      background-color: $orangered;
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      margin: 1px;
+      border-radius: 50%;
+    }
+  }
+  .logo {
+    color: $orangered;
+    cursor: pointer;
+    img {
+      width: 4vw;
+      height: 6vh;
+      object-fit: cover;
+      object-position: top;
+    }
+    &:hover {
+      color: $orangehover;
+      transition: color 0.4s ease-in-out;
+    }
+  }
+}
+
+.catcher {
+  background-color: $orangered;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  z-index: -5;
+  font-family: "Great Vibes", cursive;
+  .move {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    .content {
+      color: white;
+      height: 60%;
+      width: 100%;
+
+      .base {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0 3px 9px rgba(0, 0, 0, 0.973));
+        img {
+          width: 100%;
+          max-width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          position: absolute;
+          z-index: -1;
+        }
+
+        .identity {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          padding-left: 19px;
+
+          h1 {
+            font-size: 4rem;
+            color: $orangered;
+
+            &::first-letter {
+              font-size: 5rem;
+            }
+          }
+
+          h3 {
+            padding-top: 6px;
+            font-size: 2rem;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            &::first-letter {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #131212;
+    z-index: -2;
+  }
+}
+.social {
+  background-color: transparent;
+  position: absolute;
+  right: 8%;
+  bottom: 3%;
+  width: 150px;
+  z-index: 1;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: $orangered;
+        &:hover {
+          color: $orangehover;
+          transition: color 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.minu {
+  width: 100%;
+  height: 100vh;
+  background-color: #131212b9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  overflow: hidden;
+  font-family: "Great Vibes", cursive;
+  transform: translateX(-100%);
+  padding: 0;
+  ul {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: #131212;
+    li {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $whitesmoke;
+        display: block;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+      a {
+        color: $orangered;
+        text-decoration: none;
+        font-size: 35px;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .back {
+    width: 50px;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    text-align: center;
+    color: $orangered;
+    font-size: 30px;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+  }
+}
+
+.details {
+  background-color: $lightblack;
+  .about {
+    min-height: 100vh;
+
+    h3 {
+      padding-top: 90px;
+      align-self: flex-start;
+      font-size: 4rem;
+      background-image: linear-gradient(
+        130deg,
+        $orangered,
+        rgb(24, 23, 23) 80%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-bottom: 50px;
+    }
+    .intro {
+      color: rgb(170, 165, 165);
+      font-size: 2.7rem;
+      font-weight: 100;
+      padding: 2px 1px 15px 15px;
+      h4,
+      h2 {
+        font-family: "Great Vibes", cursive;
+        text-transform: capitalize;
+        display: block;
+        font-size: 3.5rem;
+        background-image: linear-gradient(
+          130deg,
+          $orangered 20%,
+          rgb(24, 23, 23) 50%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .skillsContainer {
+    background-color: transparent;
+    min-height: 100vh;
+    padding: 60px 0 20px 0;
+
+    h3 {
+      font-size: 4rem;
+      background-image: linear-gradient(
+        130deg,
+        $orangered,
+        rgb(24, 23, 23) 18%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-bottom: 50px;
+    }
+    .skill {
+      .value {
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0 5px 10px;
+        span {
+          color: #9c9999;
+        }
+      }
+      .prog {
+        background-color: transparent;
+        margin: 5px;
+        .progbar {
+          border-radius: 60px;
+          height: 12px;
+          background-image: linear-gradient(
+            130deg,
+            $orangered,
+            rgb(24, 23, 23) 100%
+          );
+        }
+      }
+    }
+  }
+}
+
+.cursor {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid $whitesmoke;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  z-index: 2000;
+  pointer-events: none;
+  backdrop-filter: invert(100%);
+}
+.cursorGrow {
+  transform: scale(1.9);
+  background-color: rgba(245, 245, 245, 0.488);
+}
+
+.resume {
+  min-height: 100vh;
+  display: flex;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .myresume {
+    padding-left: 0;
+    h3 {
+      font-size: 4rem;
+      background-image: linear-gradient(
+        130deg,
+        $orangered,
+        rgb(24, 23, 23) 29%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-bottom: 50px;
+    }
+  }
+  .sumary,
+  .education,
+  .contactmeon {
+    color: #9c9999;
+    border-left: 2px solid$orangered;
+    font-size: 1.2rem;
+    margin-left: 18px;
+    h4 {
+      text-transform: capitalize;
+      background-image: linear-gradient(
+        130deg,
+        $orangered,
+        rgb(211, 206, 206) 30%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: $orangered;
+      position: absolute;
+      left: -5px;
+    }
+  }
+}
+.contact {
+  min-height: 100vh;
+  background-image: url("../imgs/global\ e.jpg");
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.73);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contactContainer {
+    height: 100%;
+    form {
+      height: 500px;
+      width: 100%;
+      margin: auto;
+
+      padding-top: 15px;
+      ::placeholder {
+        color: rgb(165, 162, 162);
+        font-size: 1.2rem;
+        font-weight: 100;
+        text-transform: capitalize;
+      }
+      input {
+        color: rgb(231, 226, 226);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $orangered;
+        margin-bottom: 20px;
+        padding-top: 25px;
+        border-radius: 0;
+
+        font-size: 1.3rem;
+
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+      textarea {
+        color: rgb(231, 226, 226);
+        font-size: 1.3rem;
+        background-color: rgba(0, 0, 0, 0.623);
+        border: none;
+        margin-top: 50px;
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+    }
+    button {
+      color: rgb(231, 226, 226);
+      width: 150px;
+      background-color: transparent;
+      border: 1px solid $orangered;
+      padding: 5px 0 0 0;
+      font-family: "Great Vibes", cursive;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-size: 1.5rem;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      &:focus {
+        box-shadow: none !important;
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: linear-gradient(
+          130deg,
+          transparent 30%,
+          $orangered,
+          transparent 60%
+        );
+
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.95s ease-in-out;
+      }
+      &:hover::before {
+        transform: translateX(100%);
+      }
+    }
+  }
+}
+.footerSection {
+  background-color: $lightblack;
+  footer {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: capitalize;
+    color: $orangered;
+    font-family: "Great Vibes", cursive;
+  }
+}
+h3 {
+  text-transform: capitalize;
+  font-family: "Great Vibes", cursive;
+}
+.goup {
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 50%;
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  text-align: center;
+  padding-top: 2px;
+  transform: scale(0);
+  transition: transform 0.4s ease-in-out;
+  cursor: pointer;
+  .fa-angle-up {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: up 1.2s ease-in-out infinite;
+  }
+  a {
+    text-decoration: none;
+    color: $orangered;
+  }
+}
+.show {
+  transform: scale(1);
+}
+@keyframes up {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .catcher {
+    .move {
+      .content {
+        .base {
+          .identity {
+            padding-left: 20px;
+
+            padding-right: 50px;
+            h1 {
+              width: 250px;
+              min-height: 50px;
+              font-size: 2rem;
+              &::first-letter {
+                font-size: 3.5rem;
+                padding-bottom: 5px;
+              }
+            }
+
+            h3 {
+              font-size: 1.8rem;
+              &::first-letter {
+                font-size: 3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    .about {
+      h3 {
+        font-size: 3.7rem;
+      }
+      .intro {
+        font-size: 2rem;
+        h4,
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .skillsContainer {
+      h3 {
+        font-size: 3.8rem;
+      }
+      .skill {
+        .value {
+          font-size: 1rem;
+        }
+      }
+    }
+    .resume {
+      padding-bottom: 60px;
+      .myresume {
+        h3 {
+          font-size: 3.5rem;
+        }
+      }
+      .sumary,
+      .education,
+      .softSkills {
+        font-size: 1.1rem;
+        margin-left: 18px;
+      }
+    }
+  }
+  footer {
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(
+    130deg,
+    transparent 30%,
+    $orangered,
+    transparent
+  );
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: $lightblack;
+}
