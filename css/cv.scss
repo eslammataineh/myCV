@@ -14,7 +14,7 @@ html {
   cursor: none;
 }
 header {
-  width: 100%;
+  width: 100vw;
   height: 8vh;
   background-color: transparent;
   position: fixed;
@@ -22,15 +22,17 @@ header {
   backdrop-filter: blur(15px);
   .navbar {
     background-color: transparent;
-    width: 83vw;
+    width: 83%;
     height: 100%;
-    color: white;
     padding: 2px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .humberger {
-    width: 7vh;
+    width: 50px;
     height: 7vh;
     padding-top: 13px;
     cursor: pointer;
@@ -529,13 +531,6 @@ h3 {
   }
 }
 @media screen and (max-width: 768px) {
-  header {
-    width: 100%;
-    .navbar {
-      background-color: transparent;
-      width: 70%;
-    }
-  }
   .catcher {
     .move {
       .content {
