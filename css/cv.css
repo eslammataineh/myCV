@@ -675,6 +675,10 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
+  header .navbar{
+    background-color: transparent;
+    width: 70%;
+  }
   .catcher .move .content .base .identity {
     padding-left: 20px;
     padding-right: 50px;
