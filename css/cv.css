@@ -21,7 +21,7 @@ header {
           backdrop-filter: blur(15px);
 }
 
-header .navbar {
+header .navbarr {
   background-color: transparent;
   width: 83%;
   height: 100%;
